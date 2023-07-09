@@ -59,7 +59,9 @@ uvicorn main:app --host 0.0.0.0 --reload
 - http://localhost:8000/docs
 
 ## ライセンス
-このプログラムは、以下のリポジトリで公開されているコードを使用しています。
+このソフトウェアはMITライセンスの下で公開されています。詳細なライセンスについてはLICENCE.txtを参照してください。
+
+また、このソフトウェアは以下のリポジトリで公開されているコードを使用しています。
 
 - https://github.com/omron-devhub/2jciebu-usb-raspberrypi
 - https://github.com/heinemml/CO2Meter
