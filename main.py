@@ -71,7 +71,13 @@ threading.Thread(target=update_environment_data, daemon=True).start()
 
 @app.get("/api/environment")
 async def get_environment_data() -> Dict:
-    return environment_data
+    # 計測値を数値型に変換する
+    # 計測値の取得時は移植の観点からわざと文字列として保持させている
+    converted_data = {
+        key: int(value) if value.isdigit() else float(value) if value.replace(".", "", 1).isdigit() else value
+        for key, value in environment_data.items()
+    }
+    return converted_data
 
 @app.get("/api/co2")
 async def get_co2_data() -> Dict:
